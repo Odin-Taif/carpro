@@ -1,7 +1,7 @@
 const path = require("path");
-const allowedImageWordPressDomain = new URL(
-  process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL
-).hostname;
+// const allowedImageWordPressDomain = new URL(
+//   process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL
+// ).hostname;
 
 module.exports = {
   trailingSlash: false,
@@ -22,6 +22,6 @@ module.exports = {
    * @see https://nextjs.org/docs/basic-features/image-optimization#domains
    */
   images: {
-    domains: [allowedImageWordPressDomain, "via.placeholder.com"],
+    domains: ["carpromorris.se", "via.placeholder.com"],
   },
 };
