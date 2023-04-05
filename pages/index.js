@@ -12,6 +12,7 @@ import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
 export default function Home({ headerFooter, products }) {
+  console.log(HEADER_FOOTER_ENDPOINT);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
