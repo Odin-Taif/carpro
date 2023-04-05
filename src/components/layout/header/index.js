@@ -18,16 +18,16 @@ const Header = ({ header }) => {
       <div className="header">
         <nav className="backdrop-blur-sm py-5">
           <div className="flex items-center justify-between flex-wrap container mx-auto">
-            <div className="flex items-center flex-shrink-0 text-black mr-20">
+            <div className=" flex items-center flex-shrink-0 text-black  hover:text-yellow-300 mr-20 border-b-2 border-yellow-600">
               <Link href="/">
                 <a>
                   {siteLogoUrl ? (
                     <img
-                      className="mr-2"
+                      className="mr-2 "
                       src={siteLogoUrl}
                       alt={`${siteTitle} logo`}
-                      width="86"
-                      height="86"
+                      width="100"
+                      height="100"
                     />
                   ) : (
                     <Carpro />
@@ -36,7 +36,7 @@ const Header = ({ header }) => {
               </Link>
               <span>
                 <Link href="/">
-                  <a className="font-semibold text-xl tracking-tight">
+                  <a className="font-semibold text-3xl tracking-tight">
                     {siteTitle || "WooNext"}
                   </a>
                 </Link>
@@ -66,29 +66,29 @@ const Header = ({ header }) => {
                         href={getPathNameFromUrl(menuItem?.url ?? "") || "/"}
                       >
                         <a
-                          className="block mt-4 lg:inline-block lg:mt-0 hover:text-brand-royal-blue duration-500 mr-10"
+                          className="cursor-pointer text-black block mt-4 lg:inline-block lg:mt-0 hover:text-yellow-300 duration-500 mr-10"
                           dangerouslySetInnerHTML={{ __html: menuItem.title }}
                         />
                       </Link>
                     ))
                   : null}
-                <Link href="/blog">
+                {/* <Link href="/blog">
                   <a className="block mt-4 lg:inline-block lg:mt-0 hover:text-brand-royal-blue duration-500 mr-10">
                     Blog
                   </a>
-                </Link>
+                </Link> */}
               </div>
               <div className="text-sm font-medium">
                 <a
                   href="#responsive-header"
                   className="flex mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-10"
                 >
-                  <span className="flex flex-row items-center lg:flex-col">
+                  <span className="flex flex-row items-center lg:flex-col hover:text-yellow-300">
                     <User className="mr-1 lg:mr-0" />
                     Profile
                   </span>
                 </a>
-                <a
+                {/* <a
                   href="#responsive-header"
                   className="flex mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-10"
                 >
@@ -96,8 +96,8 @@ const Header = ({ header }) => {
                     <Wishlist className="mr-1 lg:mr-0" />
                     Wishlist
                   </span>
-                </a>
-                <Link href="/cart">
+                </a> */}
+                {/* <Link href="/cart">
                   <a className="flex mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-10">
                     <span className="flex flex-row items-center lg:flex-col">
                       <Bag className="mr-1 lg:mr-0" />
@@ -106,7 +106,7 @@ const Header = ({ header }) => {
                       </span>
                     </span>
                   </a>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
