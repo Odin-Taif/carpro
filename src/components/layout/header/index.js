@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useContext, useState } from "react";
 import { isEmpty } from "lodash";
-
 import { BurgerIcon, Carpro, Bag, User, Wishlist } from "../../icons";
 import { AppContext } from "../../context";
 import { getPathNameFromUrl } from "../../../utils/miscellaneous";
@@ -15,11 +14,11 @@ const Header = ({ header }) => {
   // console.log(siteLogoUrl)
   return (
     <>
-      <div className="header">
+      <div>
         <nav className="py-5 bg-black">
           <div className="flex items-center justify-between flex-wrap container mx-auto ">
             <div className="flex items-center flex-shrink-0 text-white  hover:text-yellow-300  mr-20 border-b-2 border-yellow-600 duration-500 ">
-              <Link href="/" className="cursor-pointer">
+              <Link href="/">
                 <a>
                   {siteLogoUrl ? (
                     <img
@@ -48,9 +47,9 @@ const Header = ({ header }) => {
             <div className="block lg:hidden">
               <button
                 onClick={() => setMenuVisibility(!isMenuVisible)}
-                className="flex items-center px-3 py-2 border rounded text-white border-black hover:text-yallow-400 hover:border-black"
+                className="flex items-center mx-3 px-1 py-1 border rounded text-white border-white hover:text-yallow-400 cursor-pointer"
               >
-                <BurgerIcon className="fill-current h-3 w-3" />
+                <BurgerIcon className="fill-current h-5 w-5" />
               </button>
             </div>
             <div
@@ -66,7 +65,7 @@ const Header = ({ header }) => {
                         href={getPathNameFromUrl(menuItem?.url ?? "") || "/"}
                       >
                         <a
-                          className="text-white block mt-4 lg:inline-block lg:mt-0 hover:text-yellow-300 duration-500 mr-10"
+                          className="text-white block mt-4 lg:inline-block lg:mt-0 hover:text-yellow-300 duration-500 mr-10 "
                           dangerouslySetInnerHTML={{ __html: menuItem.title }}
                         />
                       </Link>
