@@ -5,12 +5,6 @@ module.exports = {
       colors: {
         brand: {
           orange: "#fd7e35",
-          "platinum-black": "#333",
-          "bright-grey": "#b1b1b1",
-          "gunsmoke-grey": "#8d8d8d",
-          "royal-blue": "#3b82f6",
-          "wild-blue": "#858Fbb",
-          "gun-powder": "#434656",
         },
       },
       fontFamily: {
@@ -105,13 +99,7 @@ module.exports = {
       },
     },
     container: {
-      padding: {
-        DEFAULT: "1rem",
-        md: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
-      },
+      padding: {},
     },
   },
   variants: {},

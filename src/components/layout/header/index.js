@@ -16,14 +16,14 @@ const Header = ({ header }) => {
   return (
     <>
       <div className="header">
-        <nav className="backdrop-blur-sm py-5">
-          <div className="flex items-center justify-between flex-wrap container mx-auto">
-            <div className=" flex items-center flex-shrink-0 text-black  hover:text-yellow-300 mr-20 border-b-2 border-yellow-600">
-              <Link href="/">
+        <nav className="py-5 bg-black">
+          <div className="flex items-center justify-between flex-wrap container mx-auto ">
+            <div className="flex items-center flex-shrink-0 text-white  hover:text-yellow-300  mr-20 border-b-2 border-yellow-600 duration-500 ">
+              <Link href="/" className="cursor-pointer">
                 <a>
                   {siteLogoUrl ? (
                     <img
-                      className="mr-2 "
+                      className="mr-2"
                       src={siteLogoUrl}
                       alt={`${siteTitle} logo`}
                       width="100"
@@ -48,7 +48,7 @@ const Header = ({ header }) => {
             <div className="block lg:hidden">
               <button
                 onClick={() => setMenuVisibility(!isMenuVisible)}
-                className="flex items-center px-3 py-2 border rounded text-black border-black hover:text-black hover:border-black"
+                className="flex items-center px-3 py-2 border rounded text-white border-black hover:text-yallow-400 hover:border-black"
               >
                 <BurgerIcon className="fill-current h-3 w-3" />
               </button>
@@ -66,7 +66,7 @@ const Header = ({ header }) => {
                         href={getPathNameFromUrl(menuItem?.url ?? "") || "/"}
                       >
                         <a
-                          className="cursor-pointer text-black block mt-4 lg:inline-block lg:mt-0 hover:text-yellow-300 duration-500 mr-10"
+                          className="text-white block mt-4 lg:inline-block lg:mt-0 hover:text-yellow-300 duration-500 mr-10"
                           dangerouslySetInnerHTML={{ __html: menuItem.title }}
                         />
                       </Link>
@@ -81,7 +81,7 @@ const Header = ({ header }) => {
               <div className="text-sm font-medium">
                 <a
                   href="#responsive-header"
-                  className="flex mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-10"
+                  className="flex mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-10"
                 >
                   <span className="flex flex-row items-center lg:flex-col hover:text-yellow-300">
                     <User className="mr-1 lg:mr-0" />

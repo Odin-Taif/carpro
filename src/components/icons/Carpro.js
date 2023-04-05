@@ -3,7 +3,7 @@ import * as React from "react";
 function SvgCarproIcon(props) {
   return (
     <svg
-      className="burger-icon_svg__fill-current burger-icon_svg__h-3 burger-icon_svg__w-3"
+      className="burger-icon_svg__fill-current burger-icon_svg__h-3 burger-icon_svg__w-3 bg-white"
       xmlns="http://www.w3.org/2000/svg"
       width={30}
       height={20}

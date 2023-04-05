@@ -21,7 +21,7 @@ const Footer = ({ footer, footerMenus }) => {
 
         <div className="my-1 px-1 w-full overflow-hidden sm:w-full lg:w-1/2 xl:w-1/3">
           {/*Mailchimp Newsletter Subscription*/}
-          <NewsletterSubscribe />
+          {/* <NewsletterSubscribe /> */}
           {/* Footer Menus*/}
           {!isEmpty(footerMenus) && isArray(footerMenus) ? (
             <ul>
@@ -39,9 +39,7 @@ const Footer = ({ footer, footerMenus }) => {
       {/*Copyright Text*/}
       <div className="mb-8 mt-8 w-full flex flex-wrap">
         <div className="w-full md:w-1/2 lg:w-1/4 text-white">
-          {footer?.copyrightText
-            ? footer.copyrightText
-            : "© Codeytek Academy 2020"}
+          {footer?.copyrightText ? footer.copyrightText : "© Carpro  2023"}
         </div>
         <div className="w-full lg:w-3/4 flex justify-end">
           {!isEmpty(footer?.socialLinks) && isArray(footer?.socialLinks) ? (
