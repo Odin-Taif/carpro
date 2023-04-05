@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.36.0",
-    "@svgr/cli": "^5.5.0",
+    "@svgr/cli": "^7.0.0",
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "@wordpress/base-styles": "^4.21.0",
     "@wordpress/block-library": "^8.7.0",
@@ -36,7 +36,7 @@
     "postcss": "^8.4.16",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.1.0",
-    "postcss-preset-env": "^6.7.1",
+    "postcss-preset-env": "^7.0.0",
     "precss": "^4.0.0",
     "tailwindcss": "^2.2.19"
   }
