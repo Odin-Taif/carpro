@@ -4,7 +4,7 @@ function SvgBurgerIcon(props) {
   return (
     <svg
       className="burger-icon_svg__fill-current burger-icon_svg__h-3 burger-icon_svg__w-3"
-      viewBox="0 0 20 30"
+      viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
