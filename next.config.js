@@ -22,6 +22,10 @@ module.exports = {
    * @see https://nextjs.org/docs/basic-features/image-optimization#domains
    */
   images: {
-    domains: ["carpromorris.se", "via.placeholder.com"],
+    domains: [
+      "carpromorris.se",
+      "via.placeholder.com",
+      "backend.carpromorris.se",
+    ],
   },
 };

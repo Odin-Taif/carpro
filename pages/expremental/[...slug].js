@@ -7,24 +7,24 @@ import { useRouter } from "next/router";
 /**
  * Internal Dependencies.
  */
-import Layout from "../src/components/layout";
+import Layout from "../../src/components/layout";
 import {
   FALLBACK,
   handleRedirectsAndReturnData,
   isCustomPageUri,
-} from "../src/utils/slug";
+} from "../../src/utils/slug";
 import {
   getFormattedDate,
   getPathNameFromUrl,
   sanitize,
-} from "../src/utils/miscellaneous";
-import { getPage, getPages, getPost, getPosts } from "../src/utils/blog";
+} from "../../src/utils/miscellaneous";
+import { getPage, getPages, getPost, getPosts } from "../../src/utils/blog";
 import axios from "axios";
-import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
-import Image from "../src/components/image";
-import PostMeta from "../src/components/post-meta";
-import Products from "../src/components/products";
-import { getProductsData } from "../src/utils/products";
+import { HEADER_FOOTER_ENDPOINT } from "../../src/utils/constants/endpoints";
+import Image from "../../src/components/image";
+import PostMeta from "../../src/components/post-meta";
+import Products from "../../src/components/products";
+import { getProductsData } from "../../src/utils/products";
 
 const Page = ({ products, headerFooter, pageData }) => {
   const router = useRouter();
