@@ -8,7 +8,7 @@ import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
  * External Dependencies.
  */
 import axios from "axios";
-import { getProductsData } from "../src/utils/products";
+// import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
 export default function Home({ headerFooter, products }) {
@@ -24,19 +24,18 @@ export default function Home({ headerFooter, products }) {
   };
   return (
     <Layout headerFooter={headerFooter || {}} seo={seo}>
-      {/* <Products products={products}/> */}
+      {/* <Products products={products} /> */}
     </Layout>
   );
 }
 
 export async function getStaticProps() {
   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-  const { data: products } = await getProductsData();
-
+  // const { data: products } = await getProductsData();
   return {
     props: {
       headerFooter: headerFooterData?.data ?? {},
-      products: products ?? {},
+      // products: products ?? {},
     },
 
     /**

@@ -23,10 +23,12 @@ import axios from "axios";
 import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
 import Image from "../src/components/image";
 import PostMeta from "../src/components/post-meta";
+import Products from "../src/components/products";
+import { getProductsData } from "../src/utils/products";
 
-const Page = ({ headerFooter, pageData }) => {
+const Page = ({ products, headerFooter, pageData }) => {
   const router = useRouter();
-
+  console.log(pageData);
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
@@ -40,26 +42,19 @@ const Page = ({ headerFooter, pageData }) => {
     >
       <div className="mb-8 w-4/5 m-auto">
         <figure className="overflow-hidden mb-4">
-          <Image
-            sourceUrl={
-              pageData?._embedded["wp:featuredmedia"]?.[0]?.source_url ?? ""
-            }
-            title={pageData?.title?.rendered ?? ""}
-            width="600"
-            height="400"
-            layout="fill"
-            containerClassNames="w-full h-600px"
-          />
+          {pageData.slug === "services" ? (
+            <Products products={products} />
+          ) : null}
         </figure>
-        <PostMeta
+        {/* <PostMeta
           date={getFormattedDate(pageData?.date ?? "")}
           authorName={pageData?._embedded?.author?.[0]?.name ?? ""}
-        />
-        <h1
+        /> */}
+        {/* <h1
           dangerouslySetInnerHTML={{
             __html: sanitize(pageData?.title?.rendered ?? ""),
           }}
-        />
+        /> */}
         <div
           dangerouslySetInnerHTML={{
             __html: sanitize(pageData?.content?.rendered ?? ""),
@@ -75,11 +70,12 @@ export default Page;
 export async function getStaticProps({ params }) {
   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   const pageData = await getPage(params?.slug.pop() ?? "");
-
+  const { data: products } = await getProductsData();
   const defaultProps = {
     props: {
       headerFooter: headerFooterData?.data ?? {},
       pageData: pageData?.[0] ?? {},
+      products: products ?? {},
     },
     /**
      * Revalidate means that if a new request comes to server, then every 1 sec it will check
@@ -88,7 +84,6 @@ export async function getStaticProps({ params }) {
      */
     revalidate: 1,
   };
-
   return handleRedirectsAndReturnData(defaultProps, pageData);
 }
 
@@ -111,9 +106,7 @@ export async function getStaticProps({ params }) {
  */
 export async function getStaticPaths() {
   const pagesData = await getPages();
-
   const pathsData = [];
-
   isArray(pagesData) &&
     pagesData.map((page) => {
       /**
@@ -131,7 +124,6 @@ export async function getStaticPaths() {
         pathsData.push({ params: { slug: slugs } });
       }
     });
-
   return {
     paths: pathsData,
     fallback: FALLBACK,
