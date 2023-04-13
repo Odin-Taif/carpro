@@ -24,6 +24,8 @@ export default function Home({ headerFooter, products }) {
   };
   return (
     <Layout headerFooter={headerFooter || {}} seo={seo}>
+      {/* HeroSection */}
+      <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0"></div>
       {/* <Products products={products} /> */}
     </Layout>
   );

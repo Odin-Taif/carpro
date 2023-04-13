@@ -34,7 +34,7 @@ const Services = ({ products, headerFooter }) => {
 
 export default Services;
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   const { data: products } = await getProductsData();
   return {
