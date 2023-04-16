@@ -33,7 +33,7 @@ const Layout = ({ children, headerFooter, seo, uri }) => {
         </Head>
         <Header header={header} />
         <main className="container mx-auto py-4 min-h-50vh">{children}</main>
-        <Footer footer={footer} />
+        {/* <Footer footer={footer} /> */}
       </div>
     </AppProvider>
   );
