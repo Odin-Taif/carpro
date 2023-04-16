@@ -12,7 +12,7 @@ import Products from "../src/components/products";
 import { getProductsData } from "../src/utils/products";
 
 const Services = ({ products, headerFooter }) => {
-  console.log(products);
+  // console.log(products);
   const router = useRouter();
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
