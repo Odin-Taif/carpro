@@ -3,7 +3,7 @@
  */
 import Products from "../src/components/products";
 import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
-
+import Section1 from "../src/components/sections/section1";
 /**
  * External Dependencies.
  */
@@ -25,7 +25,14 @@ export default function Home({ headerFooter, products }) {
   return (
     <Layout headerFooter={headerFooter || {}} seo={seo}>
       {/* HeroSection */}
+<<<<<<< HEAD
       {/* <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0"></div> */}
+=======
+      {/* <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0">
+        <Section1 />
+      </div> */}
+      <Section1 />
+>>>>>>> efb21cd (added swiper)
       {/* <Products products={products} /> */}
     </Layout>
   );
