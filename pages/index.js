@@ -26,13 +26,19 @@ export default function Home({ headerFooter, products }) {
     <Layout headerFooter={headerFooter || {}} seo={seo}>
       {/* HeroSection */}
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0"></div> */}
 =======
+=======
+>>>>>>> efb21cde642db347b073479d35cf134f3e305315
       {/* <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0">
         <Section1 />
       </div> */}
       <Section1 />
+<<<<<<< HEAD
 >>>>>>> efb21cd (added swiper)
+=======
+>>>>>>> efb21cde642db347b073479d35cf134f3e305315
       {/* <Products products={products} /> */}
     </Layout>
   );
