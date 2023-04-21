@@ -40,7 +40,7 @@ export default function Section1() {
         <div className="grid grid-cols-1">
           <Link href={`/posts`}>
             <button className="bg-yellow-500 hover:bg-blue-700 text-white text-2xl font-bold py-3 px-20 md:px-20 rounded">
-              Contact us now!
+              Contact us now!!!
             </button>
           </Link>
         </div>
