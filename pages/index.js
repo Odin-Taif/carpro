@@ -11,7 +11,7 @@ import axios from "axios";
 // import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
-export default function Home({ headerFooter, products }) {
+export default function Home() {
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -23,41 +23,26 @@ export default function Home({ headerFooter, products }) {
     },
   };
   return (
-    <Layout headerFooter={headerFooter || {}} seo={seo}>
-      {/* HeroSection */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-      {/* <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0"></div> */}
-=======
-=======
->>>>>>> efb21cde642db347b073479d35cf134f3e305315
-      {/* <div className="bg-gradient-to-r from-cyan-500 to-green-500 absolute top-0">
-        <Section1 />
-      </div> */}
+    <Layout seo={seo}>
       <Section1 />
-<<<<<<< HEAD
->>>>>>> efb21cd (added swiper)
-=======
->>>>>>> efb21cde642db347b073479d35cf134f3e305315
-      {/* <Products products={products} /> */}
     </Layout>
   );
 }
 
-export async function getStaticProps() {
-  const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-  // const { data: products } = await getProductsData();
-  return {
-    props: {
-      headerFooter: headerFooterData?.data ?? {},
-      // products: products ?? {},
-    },
+// export async function getStaticProps() {
+//   const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
+//   // const { data: products } = await getProductsData();
+//   return {
+//     props: {
+//       headerFooter: headerFooterData?.data ?? {},
+//       // products: products ?? {},
+//     },
 
-    /**
-     * Revalidate means that if a new request comes to server, then every 1 sec it will check
-     * if the data is changed, if it is changed then it will update the
-     * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
-     */
-    revalidate: 1,
-  };
-}
+//     /**
+//      * Revalidate means that if a new request comes to server, then every 1 sec it will check
+//      * if the data is changed, if it is changed then it will update the
+//      * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
+//      */
+//     revalidate: 1,
+//   };
+// }

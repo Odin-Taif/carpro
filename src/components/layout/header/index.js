@@ -9,11 +9,9 @@ import { AiOutlineMail } from "react-icons/ai";
 import { useRouter } from "next/router";
 import Uppernav from "./uppernav";
 
-const Header = ({ header }) => {
+const Header = () => {
   const router = useRouter();
   const [cart, setCart] = useContext(AppContext);
-  const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle } =
-    header || {};
 
   const [isMenuVisible, setMenuVisibility] = useState(false);
   const navigation = [
@@ -22,15 +20,8 @@ const Header = ({ header }) => {
     { name: "Contact us", href: "/contact", current: false },
     { name: "About us", href: "/about", current: false },
   ];
-  // console.log(siteLogoUrl)
   return (
     <>
-      <Uppernav
-        siteLogoUrl={siteLogoUrl}
-        siteTitle={siteTitle}
-        siteDescription={siteDescription}
-      />
-
       <nav className="flex items-center flex-wrap py-5 bg-black">
         <div className="w-full lg:hidden flex md:flex md:flex-grow flex-row justify-end space-x-1 bg-black">
           <button
@@ -46,21 +37,6 @@ const Header = ({ header }) => {
           } overflow-hidden w-full mx-4 lg:h-full block flex-grow lg:flex lg:items-center lg:w-auto`}
         >
           <div className="text-lg font-medium uppercase lg:flex-grow">
-            {/* {!isEmpty(headerMenuItems) && headerMenuItems.length
-              ? headerMenuItems.map((menuItem) => (
-                  <Link
-                    key={menuItem?.ID}
-                    href={getPathNameFromUrl(menuItem?.url ?? "") || "/"}
-                  >
-                    <a
-                      className={`${
-                        isMenuVisible ? "border-b border-gray-800" : ""
-                      } text-white block mt-4 lg:inline-block lg:mt-0 hover:text-yellow-300 duration-500 mr-10`}
-                      dangerouslySetInnerHTML={{ __html: menuItem.title }}
-                    />
-                  </Link>
-                ))
-              : null} */}
             {navigation.map((item) => (
               <Link key={item.name} href={item.href || "/"}>
                 <a
@@ -72,16 +48,6 @@ const Header = ({ header }) => {
               </Link>
             ))}
           </div>
-
-          <a
-            href="#responsive-header"
-            className="flex mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-10"
-          >
-            <span className="flex flex-row items-center lg:flex-col hover:text-yellow-300">
-              <Wishlist className="mr-1 lg:mr-0" />
-              Wishlist
-            </span>
-          </a>
           <Link href="/cart">
             <a className="flex mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-10">
               <span className="flex flex-row items-center lg:flex-col hover:text-yellow-300">

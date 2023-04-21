@@ -8,8 +8,7 @@ import {
   sanitize,
 } from "../../utils/miscellaneous";
 
-const Layout = ({ children, headerFooter, seo, uri }) => {
-  const { header, footer } = headerFooter || {};
+const Layout = ({ children, seo, uri }) => {
   const yoastSchema = seo?.schema
     ? replaceBackendWithFrontendUrl(JSON.stringify(seo.schema))
     : null;
@@ -19,7 +18,7 @@ const Layout = ({ children, headerFooter, seo, uri }) => {
       <div>
         <Seo seo={seo || {}} uri={uri || ""} />
         <Head>
-          <link rel="shortcut icon" href={header?.favicon ?? "/favicon.ico"} />
+          <link rel="shortcut icon" href={"/favicon.ico"} />
           {yoastSchema ? (
             <script
               type="application/ld+json"
@@ -28,12 +27,12 @@ const Layout = ({ children, headerFooter, seo, uri }) => {
               dangerouslySetInnerHTML={{ __html: sanitize(yoastSchema) }}
             />
           ) : (
-            <title>{header?.siteTitle ?? "Nexts WooCommerce"}</title>
+            <title>{"Nexts WooCommerce"}</title>
           )}
         </Head>
-        <Header header={header} />
-        <main className="container mx-auto py-4 min-h-50vh">{children}</main>
-        <Footer footer={footer} />
+        <Header />
+        <main className="container mx-auto py-4 min-h-100vh">{children}</main>
+        <Footer />
       </div>
     </AppProvider>
   );
