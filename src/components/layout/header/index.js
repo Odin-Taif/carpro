@@ -4,15 +4,12 @@ import { isEmpty } from "lodash";
 import { BurgerIcon, Bag, User, Wishlist } from "../../icons";
 import { AppContext } from "../../context";
 import { getPathNameFromUrl } from "../../../utils/miscellaneous";
-import { FaMobileAlt } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
+
 import { useRouter } from "next/router";
-import Uppernav from "./uppernav";
 
 const Header = () => {
   const router = useRouter();
   const [cart, setCart] = useContext(AppContext);
-
   const [isMenuVisible, setMenuVisibility] = useState(false);
   const navigation = [
     { name: "Home", href: "/", current: false },

@@ -9,9 +9,9 @@ import {
 export default function Footer() {
   return (
     <>
-      <footer className="pt-8 pb-6 bg-black">
+      <footer className=" mt-auto pt-8 pb-6 bg-black">
         <div
-          className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-20"
+          className="bottom-0 top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-20"
           style={{ transform: "translateZ(0)" }}
         >
           <svg

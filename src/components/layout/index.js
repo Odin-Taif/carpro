@@ -15,25 +15,23 @@ const Layout = ({ children, seo, uri }) => {
 
   return (
     <AppProvider>
-      <div>
-        <Seo seo={seo || {}} uri={uri || ""} />
-        <Head>
-          <link rel="shortcut icon" href={"/favicon.ico"} />
-          {yoastSchema ? (
-            <script
-              type="application/ld+json"
-              className="yoast-schema-graph"
-              key="yoastSchema"
-              dangerouslySetInnerHTML={{ __html: sanitize(yoastSchema) }}
-            />
-          ) : (
-            <title>{"Nexts WooCommerce"}</title>
-          )}
-        </Head>
-        <Header />
-        <main className="container mx-auto py-4 min-h-100vh">{children}</main>
-        <Footer />
-      </div>
+      <Seo seo={seo || {}} uri={uri || ""} />
+      <Head>
+        <link rel="shortcut icon" href={"/favicon.ico"} />
+        {yoastSchema ? (
+          <script
+            type="application/ld+json"
+            className="yoast-schema-graph"
+            key="yoastSchema"
+            dangerouslySetInnerHTML={{ __html: sanitize(yoastSchema) }}
+          />
+        ) : (
+          <title>{"Nexts WooCommerce"}</title>
+        )}
+      </Head>
+      <Header />
+      <main className=" mx-auto py-4 h-screen">{children}</main>
+      <Footer />
     </AppProvider>
   );
 };

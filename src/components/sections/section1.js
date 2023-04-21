@@ -21,8 +21,8 @@ export default function Section1() {
   };
 
   return (
-    <section className="py-5" style={bg}>
-      <div className="container mx-auto md:px-20">
+    <section className="py-10">
+      <div className=" mx-auto md:px-20">
         {/* <h1 className="font-bold text-4xl pb-12 text-center">Trending</h1> */}
         <Swiper
           slidesPerView={1}
@@ -37,13 +37,13 @@ export default function Section1() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="grid grid-cols-1">
+        {/* <div className="grid grid-cols-1">
           <Link href={`/posts`}>
             <button className="bg-yellow-500 hover:bg-blue-700 text-white text-2xl font-bold py-3 px-20 md:px-20 rounded">
               Contact us now!
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
