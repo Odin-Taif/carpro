@@ -30,7 +30,7 @@ const Layout = ({ children, seo, uri }) => {
         )}
       </Head>
       <Header />
-      <main className=" mx-auto py-4 h-screen">{children}</main>
+      <main className="mx-auto py-4 h-screen">{children}</main>
       <Footer />
     </AppProvider>
   );

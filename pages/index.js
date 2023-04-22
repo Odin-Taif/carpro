@@ -4,6 +4,7 @@
 import Products from "../src/components/products";
 import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
 import Section1 from "../src/components/sections/section1";
+import Section2 from "../src/components/sections/section2";
 /**
  * External Dependencies.
  */
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <Layout seo={seo}>
       <Section1 />
+      <Section2 />
     </Layout>
   );
 }
