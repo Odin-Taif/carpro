@@ -84,7 +84,7 @@ const ThankYouContent = () => {
 
 export default function ThankYou() {
   return (
-    <Layout headerFooter={headerFooter || {}}>
+    <Layout>
       <ThankYouContent />
     </Layout>
   );
