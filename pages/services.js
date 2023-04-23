@@ -7,11 +7,10 @@ import {
   isCustomPageUri,
 } from "../src/utils/slug";
 import axios from "axios";
-import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
 import Products from "../src/components/products";
 import { getProductsData } from "../src/utils/products";
 
-const Services = ({ products, headerFooter }) => {
+const Services = ({ products }) => {
   // console.log(products);
   const router = useRouter();
   // If the page is not yet generated, this will be displayed
@@ -20,10 +19,8 @@ const Services = ({ products, headerFooter }) => {
     return <div>Loading...</div>;
   }
   return (
-    <Layout
-      headerFooter={headerFooter || {}}
-      // seo={pageData?.yoast_head_json ?? {}}
-    >
+    <Layout>
+      {/* // seo={pageData?.yoast_head_json ?? {}} */}
       <div className="mb-8 w-4/5 m-auto">
         <figure className="overflow-hidden mb-4">
           <Products products={products} />
@@ -36,11 +33,11 @@ const Services = ({ products, headerFooter }) => {
 export default Services;
 
 export async function getStaticProps() {
-  const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
+  // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   const { data: products } = await getProductsData();
   return {
     props: {
-      headerFooter: headerFooterData?.data ?? {},
+      // headerFooter: headerFooterData?.data ?? {},
       products: products ?? {},
     },
     /**

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "use-web3forms";
-import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
-import axios from "axios";
 import Image from "next/image";
 import { FiMapPin } from "react-icons/fi";
 import Layout from "../src/components/layout";
+import { FaMobileAlt } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 export default function Contact({ headerFooter }) {
   const {
     register,
@@ -40,40 +40,21 @@ export default function Contact({ headerFooter }) {
   });
   return (
     <>
-      <Layout headerFooter={headerFooter || {}}>
-        <div className="md:grid grid-cols-2 content-center justify-center bg-black m-auto sm:p-20">
-          <div className="grid my-10 md:grid-cols-2">
-            <div className="my-10">
-              <div className="relative overflow-hidden rounded-md aspect-square odd:translate-y-10 odd:md:translate-y-6 w-40">
-                {/* <Image
-                  alt="qrlogo"
-                  src={qrlogo}
-                  sizes="(max-width: 200px) 100vw, 200px"
-                  loader={() => value}
-                  unoptimized={true}
-                /> */}
-              </div>
-              <div className="mt-5">
-                <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
-                  <p className="max-w-sm mt-5 text-white">
-                    Grundsätzlich ist es unser Anspruch, Ihnen vielfältige
-                    Mietwagenlösungen zu attraktiven Konditionen zu bieten.
-                    Darüber hinaus lassen wir uns immer wieder besondere
-                    Angebote einfallen, mit denen wir spezielle Bedürfnisse rund
-                    um Ihre Mobilität besonders günstig und umfangreich
-                    abdecken. Schauen Sie einfach mal rein – es lohnt sich!.
-                  </p>
-                </div>
-
-                {/* {siteconfig?.phone && ( */}
-                <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
-                  {/* <PhoneIcon className="w-4 h-4" /> */}
-                  {/* <a href={`tel:${siteconfig.phone}`}>{siteconfig.phone}</a> */}
-                </div>
-                {/* )} */}
-              </div>
+      <Layout>
+        <div className="md:grid grid-cols-2 content-center justify-center m-5 sm:p-20">
+          <div className=" grid m-10 md:grid-cols-1">
+            <p className=" text-black">
+              Grundsätzlich ist es unser Anspruch, Ihnen vielfältige
+              Mietwagenlösungen zu attraktiven Konditionen zu bieten. Darüber
+              hinaus lassen wir uns immer wieder besondere Angebote einfallen,
+              mit denen wir spezielle Bedürfnisse rund um Ihre Mobilität
+              besonders günstig und umfangreich abdecken. Schauen Sie einfach
+              mal rein – es lohnt sich!.
+            </p>
+            {/* {siteconfig?.phone && ( */}
+            <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
               <div className="flex flex-col">
-                <h4 className="text-3xl font-semibold text-white">
+                <h4 className="text-3xl font-semibold text-black">
                   <div className="flex flex-row hover:cursor-pointer">
                     <a
                       href="https://www.google.com/maps/dir//V%C3%A4ster%C3%A5s+Tech+AB/data=!4m8!4m7!1m0!1m5!1m1!1s0x465e6177c01d8a57:0x8117349cbcdf9ca6!2m2!1d16.5420248!2d59.6102065"
@@ -83,17 +64,46 @@ export default function Contact({ headerFooter }) {
                     </a>
                     <FiMapPin
                       size={25}
-                      className="text-white m-2 hover:text-red-500 "
+                      className="text-black m-2 hover:text-red-500 "
                     />
                   </div>
                   <hr className="my-3 border-teal-700" />
                 </h4>
                 <h5 className="text-lg mt-0 mb-2 text-blueGray-600  text-gray-300">
-                  Kungsgatan 2
-                  <br /> 722 11 Västerås
+                  <br /> 722 11 Vienna
                   <br />
-                  {/* <span className="text-white"> Söndag Stängt</span> */}
+                  {/* <span className="text-black"> Söndag Stängt</span> */}
                 </h5>
+                <div className="lg:block">
+                  <a
+                    href="tel:+436769617206"
+                    className="flex m-2 lg:inline-block text-black "
+                  >
+                    <span className="flex flex-row items-center hover:text-yellow-300 ">
+                      <AiOutlineMail size={25} className="mr-1 lg:mr-0  " />|
+                      info@carpromorris.se
+                    </span>
+                  </a>
+                  <a
+                    href="tel:+436769617206"
+                    className="flex m-2 lg:inline-block text-black"
+                  >
+                    <span className="flex flex-row items-center hover:text-yellow-300 ">
+                      <FaMobileAlt size={25} className="mr-1 lg:mr-0 " />|
+                      +436769617206
+                    </span>
+                  </a>
+                </div>
+                <div>
+                  <Image
+                    alt="qrlogo"
+                    src={"images/carpro1.webp"}
+                    width={100}
+                    height={100}
+                    loader={() => value}
+                    unoptimized={true}
+                  />
+                </div>
               </div>
             </div>
             <div>
@@ -109,7 +119,6 @@ export default function Contact({ headerFooter }) {
               )}
             </div>
           </div>
-
           <form onSubmit={handleSubmit(onSubmit)} className="my-10">
             <input
               type="checkbox"
@@ -124,10 +133,10 @@ export default function Contact({ headerFooter }) {
                 type="text"
                 placeholder="Full Name"
                 autoComplete="false"
-                className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
+                className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-black rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
                   errors.name
                     ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-black dark:ring-0"
                 }`}
                 {...register("name", {
                   required: "Full name is required",
@@ -151,10 +160,10 @@ export default function Contact({ headerFooter }) {
                 placeholder="Email Address"
                 name="email"
                 autoComplete="false"
-                className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
+                className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-black rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
                   errors.email
                     ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-black dark:ring-0"
                 }`}
                 {...register("email", {
                   required: "Enter your email",
@@ -175,10 +184,10 @@ export default function Contact({ headerFooter }) {
               <textarea
                 name="message"
                 placeholder="Your Message"
-                className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white dark:placeholder:text-gray-200 dark:bg-gray-900   rounded-md outline-none  h-36 focus:ring-4  ${
+                className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-black dark:placeholder:text-gray-200 dark:bg-gray-900   rounded-md outline-none  h-36 focus:ring-4  ${
                   errors.message
                     ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-black dark:ring-0"
                 }`}
                 {...register("message", {
                   required: "Enter your Message",
@@ -194,11 +203,11 @@ export default function Contact({ headerFooter }) {
 
             <button
               type="submit"
-              className="w-full py-4 font-semibold text-white transition-colors bg-green-300 rounded-md hover:bg-green-700 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black "
+              className="w-full py-4 font-semibold text-black transition-colors bg-green-300 rounded-md hover:bg-green-700 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-black dark:text-black "
             >
               {isSubmitting ? (
                 <svg
-                  className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"
+                  className="w-5 h-5 mx-auto text-black dark:text-black animate-spin"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -236,19 +245,17 @@ export default function Contact({ headerFooter }) {
   );
 }
 
-export async function getStaticProps() {
-  const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-
-  return {
-    props: {
-      headerFooter: headerFooterData?.data ?? {},
-    },
-
-    /**
-     * Revalidate means that if a new request comes to server, then every 1 sec it will check
-     * if the data is changed, if it is changed then it will update the
-     * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
-     */
-    revalidate: 1,
-  };
-}
+// export async function getStaticProps() {
+//   // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
+//   // return {
+//   //   props: {
+//   //     headerFooter: headerFooterData?.data ?? {},
+//   //   },
+//   //   /**
+//   //    * Revalidate means that if a new request comes to server, then every 1 sec it will check
+//   //    * if the data is changed, if it is changed then it will update the
+//   //    * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
+//   //    */
+//   //   revalidate: 1,
+//   // };
+// }

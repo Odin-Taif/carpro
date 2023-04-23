@@ -9,7 +9,7 @@ import {
 export default function Footer() {
   return (
     <>
-      <footer className=" mt-auto pt-8 pb-6 bg-black">
+      <footer className="mt-auto pt-8 pb-6 bg-black">
         <div
           className="bottom-0 top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-20"
           style={{ transform: "translateZ(0)" }}
@@ -27,8 +27,7 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
-              {/*Mailchimp Newsletter Subscription*/}
-              <div className=" flex flex-row mt-6 lg:mb-0 mb-6">
+              <div className=" flex flex-row mt-6 lg:mb-0">
                 <a
                   href="https://www.instagram.com/vasteras_tech_ab/?igshid=YmMyMTA2M2Y="
                   target="_blank"
@@ -56,6 +55,7 @@ export default function Footer() {
                   <FaMobileAlt size={20} className="mx-auto" />
                 </a>
               </div>
+              {/*Mailchimp Newsletter Subscription*/}
               <NewsletterSubscribe />
             </div>
             <div className="w-full lg:w-6/12 px-4">

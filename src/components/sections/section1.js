@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-// import Author from "./_child/author"
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 // Import Swiper styles
@@ -50,7 +48,7 @@ function Slide({ data }) {
       </div>
       <div className="info flex justify-center flex-col mx-5">
         <div className="title">
-          <h1 className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-800 hover:text-gray-600">
             {title || "Unknown"}
           </h1>
         </div>

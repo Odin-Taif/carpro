@@ -60,7 +60,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
   };
 
   return (
-    <div>
+    <div className="mb-5">
       <h3 className="mb-1 uppercase font-bold">Subscribe to newsletter</h3>
       <div className="flex newsletter-input-fields">
         <div className="mc-field-group">
