@@ -1,11 +1,9 @@
 import Link from "next/link";
-import axios from "axios";
-import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
 import Layout from "../src/components/layout";
 
 function Error404({ headerFooter }) {
   return (
-    <Layout headerFooter={headerFooter || {}} seo={null}>
+    <Layout seo={null}>
       <div className="h-almost-screen">
         <section className="text-gray-600 body-font">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -35,13 +33,3 @@ function Error404({ headerFooter }) {
   );
 }
 export default Error404;
-
-export async function getStaticProps() {
-  const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-
-  return {
-    props: {
-      headerFooter: headerFooterData?.data ?? {},
-    },
-  };
-}

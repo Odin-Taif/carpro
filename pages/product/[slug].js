@@ -1,7 +1,7 @@
 /**
  * Internal Dependencies.
  */
-import { HEADER_FOOTER_ENDPOINT } from "../../src/utils/constants/endpoints";
+
 import { getProductsData, getProductBySlug } from "../../src/utils/products";
 import Layout from "../../src/components/layout";
 import SingleProduct from "../../src/components/single-product";
@@ -21,7 +21,6 @@ export default function Product({ headerFooter, product }) {
   }
   return (
     <Layout
-      headerFooter={headerFooter || {}}
       seo={product?.yoast_head_json ?? {}}
       uri={`/product/${product?.slug ?? ""}`}
     >
@@ -32,7 +31,6 @@ export default function Product({ headerFooter, product }) {
 
 export async function getStaticProps({ params }) {
   const { slug } = params || {};
-  const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   const { data: product } = await getProductBySlug(slug);
   return {
     props: {
