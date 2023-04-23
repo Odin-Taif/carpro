@@ -12,7 +12,7 @@ import SingleProduct from "../../src/components/single-product";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-export default function Product({ headerFooter, product }) {
+export default function Product({ product }) {
   const router = useRouter();
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
@@ -34,7 +34,6 @@ export async function getStaticProps({ params }) {
   const { data: product } = await getProductBySlug(slug);
   return {
     props: {
-      headerFooter: headerFooterData?.data ?? {},
       product: product.length ? product[0] : {},
     },
     revalidate: 1,
