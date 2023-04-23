@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Layout from "../src/components/layout";
 
-function Error404({ headerFooter }) {
+function Error404() {
   return (
     <Layout seo={null}>
       <div className="h-almost-screen">

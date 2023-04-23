@@ -6,7 +6,7 @@ import Error from "../_child/error";
 import FormSection from "./formsection3";
 
 export default function section2() {
-  const { data, isLoading, isError } = fetcher("api/Services");
+  const { data, isLoading, isError } = fetcher("api/services");
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
   return (

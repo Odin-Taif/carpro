@@ -56,7 +56,7 @@ export default function Footer() {
                 </a>
               </div>
               {/*Mailchimp Newsletter Subscription*/}
-              <NewsletterSubscribe />
+              {/* <NewsletterSubscribe /> */}
             </div>
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap items-top mb-6">

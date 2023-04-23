@@ -27,7 +27,7 @@ export default function FormSection() {
 
   return (
     <div className="isolate bg-white p-5">
-      <div className="flex items-center justify-between flex-wrap text-sm font-medium border-b-2 border-r-2 rounded-lg border-green-500">
+      <div className="flex items-center justify-between flex-wrap text-sm font-medium p-2 border-b-2 border-r-2 rounded-lg border-green-500">
         <p className=" py-12 text-center">
           Do you have questions? Feel free to ask us! Transparency is important
           to us. We have therefore made every effort to provide you with all the

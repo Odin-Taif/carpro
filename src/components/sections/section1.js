@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 // Import Swiper styles
@@ -40,7 +39,7 @@ export default function Section1() {
 }
 
 function Slide({ data }) {
-  const { id, title, category, img, description } = data;
+  const { id, title, img, description } = data;
   return (
     <div className="grid md:grid-cols-2">
       <div className="image mx-5">
