@@ -30,7 +30,7 @@ export default function Home({ trending, services }) {
     <Layout seo={seo}>
       {/* <SWRConfig value={{ fallback }}> */}
       <Section1 data={trending} />
-      {/* <Section2 data={services} /> */}
+      <Section2 data={services} />
       {/* </SWRConfig> */}
       {/* <Section3 /> */}
     </Layout>
