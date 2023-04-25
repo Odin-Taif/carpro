@@ -40,7 +40,9 @@ export default function Home({ fallback }) {
 export async function getStaticProps() {
   // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   // const { data: products } = await getProductsData();
-  const response = await fetch(`https://carpro-ivory.vercel.app/api/trending`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/trending`
+  );
   const trending = await response.json();
   return {
     props: {
