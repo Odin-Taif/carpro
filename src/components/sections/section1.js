@@ -7,8 +7,8 @@ import fetcher from "../../../lib/fetcher";
 import Spinner from "../../components/_child/spinner";
 import Error from "../../components/_child/error";
 
-export default function Section1() {
-  const { data, isLoading, isError } = fetcher("api/trending");
+export default function Section1({ data, isLoading, isError }) {
+  // const { data, isLoading, isError } = fetcher("api/trending");
   console.log(data);
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;

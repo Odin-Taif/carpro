@@ -15,7 +15,7 @@ import axios from "axios";
 import Layout from "../src/components/layout";
 
 export default function Home({ fallback }) {
-  // console.log(fallback);
+  console.log(fallback);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -29,7 +29,7 @@ export default function Home({ fallback }) {
   return (
     <Layout seo={seo}>
       <SWRConfig value={{ fallback }}>
-        <Section1 />
+        <Sec1 />
         {/* <Section2 /> */}
       </SWRConfig>
       {/* <Section3 /> */}
@@ -60,6 +60,12 @@ export async function getStaticProps() {
      */
     // revalidate: 1,
   };
+}
+
+function Sec1() {
+  // `data` will always be available as it's in `fallback`.
+  const { data, isLoading, isError } = fetcher("api/trending");
+  return <Section1 data={data} isError={isError} isLoading={isLoading} />;
 }
 
 // export async function getStaticProps() {
