@@ -14,8 +14,8 @@ import axios from "axios";
 import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
-export default function Home({ fallback, trending }) {
-  console.log(trending);
+export default function Home({ fallback }) {
+  console.log(fallback);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -45,10 +45,10 @@ export async function getStaticProps() {
   const trending = await response.json();
   return {
     props: {
-      trending: trending ?? {},
+      // trending: trending ?? {},
       fallback: {
         // [unstable_serialize(["api", "trending", 1])]: trending,
-        "/api/article": trending,
+        "/api/trending": trending,
       },
       // headerFooter: headerFooterData?.data ?? {},
       // products: products ?? {},
