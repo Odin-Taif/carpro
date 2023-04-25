@@ -1,7 +1,7 @@
 /**
  * Internal Dependencies.
  */
-import Products from "../src/components/products";
+// import Products from "../src/components/products";
 import Section1 from "../src/components/sections/section1";
 import Section2 from "../src/components/sections/section2";
 import Section3 from "../src/components/sections/section3";
@@ -11,11 +11,11 @@ import fetcher from "../lib/fetcher";
  * External Dependencies.
  */
 import axios from "axios";
-import { getProductsData } from "../src/utils/products";
+// import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
 export default function Home({ fallback }) {
-  console.log(fallback);
+  // console.log(fallback);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -44,7 +44,6 @@ export async function getStaticProps() {
   const trending = await response.json();
   return {
     props: {
-      trending: trending ?? {},
       fallback: {
         // [unstable_serialize(["api", "trending", 1])]: trending,
         "/api/trending": trending,
