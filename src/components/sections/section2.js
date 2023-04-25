@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import fetcher from "../../../lib/fetcher";
 import Spinner from "../_child/spinner";
@@ -7,7 +6,7 @@ import FormSection from "./formsection3";
 
 export default function section2() {
   const { data, isLoading, isError } = fetcher("api/services");
-  console.log(data);
+  // console.log(data);
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
   return (
