@@ -40,7 +40,7 @@ export default function Home({ fallback }) {
 
 export async function getStaticProps() {
   // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-  const { data: products } = await getProductsData();
+  // const { data: products } = await getProductsData();
   const response = await fetch(`http://localhost:3000/api/trending`);
   const trending = await response.json();
   return {

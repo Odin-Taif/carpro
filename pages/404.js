@@ -19,13 +19,13 @@ function Error404() {
                 </Link>
               </div>
             </div>
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            {/* <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
               <img
                 className="object-cover object-center rounded"
                 alt="not found"
                 src="https://dummyimage.com/620x400"
               />
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
