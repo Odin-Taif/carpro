@@ -41,7 +41,7 @@ export async function getStaticProps() {
   // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   // const { data: products } = await getProductsData();
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/api/trending`
+    `${process.env.NEXT_PUBLIC_SITE_URL}api/trending`
   );
   const trending = await response.json();
   return {
