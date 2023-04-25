@@ -15,7 +15,7 @@ import axios from "axios";
 import Layout from "../src/components/layout";
 
 export default function Home({ trending, services }) {
-  console.log(trending);
+  console.log(services);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -64,7 +64,6 @@ export async function getStaticProps() {
      * if the data is changed, if it is changed then it will update the
      * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
      */
-    revalidate: 1,
   };
 }
 
