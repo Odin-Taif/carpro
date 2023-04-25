@@ -30,7 +30,7 @@ export default function Home({ trending, services }) {
     <Layout seo={seo}>
       {/* <SWRConfig value={{ fallback }}> */}
       <Section1 data={trending} />
-      <Section2 data={services} />
+      {/* <Section2 data={services} /> */}
       {/* </SWRConfig> */}
       {/* <Section3 /> */}
     </Layout>
@@ -43,11 +43,11 @@ export async function getStaticProps() {
   const trendingRes = await fetch(
     `${process.env.NEXT_PUBLIC_SITE_URL}/api/trending`
   );
+  const trending = await trendingRes.json(JSON.stringify(trendingRes));
   const servicesRes = await fetch(
     `${process.env.NEXT_PUBLIC_SITE_URL}/api/services`
   );
-  const trending = await trendingRes.json();
-  const services = await servicesRes.json();
+  const services = await servicesRes.json(JSON.stringify(servicesRes));
   return {
     props: {
       trending: trending,
@@ -64,6 +64,7 @@ export async function getStaticProps() {
      * if the data is changed, if it is changed then it will update the
      * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
      */
+    revalidate: 1,
   };
 }
 
