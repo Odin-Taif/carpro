@@ -5,7 +5,7 @@ import Products from "../src/components/products";
 import Section1 from "../src/components/sections/section1";
 import Section2 from "../src/components/sections/section2";
 import Section3 from "../src/components/sections/section3";
-import useSWR, { SWRConfig, unstable_serialize } from "swr";
+import { SWRConfig, unstable_serialize } from "swr";
 import fetcher from "../lib/fetcher";
 /**
  * External Dependencies.
@@ -29,7 +29,6 @@ export default function Home({ fallback }) {
   return (
     <Layout seo={seo}>
       <SWRConfig value={{ fallback }}>
-        {/* <Article /> */}
         <Section1 />
         {/* <Section2 /> */}
       </SWRConfig>
@@ -41,11 +40,13 @@ export default function Home({ fallback }) {
 export async function getStaticProps() {
   // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
   // const { data: products } = await getProductsData();
-  const response = await fetch(`http://localhost:3000/api/trending`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/trending`
+  );
   const trending = await response.json();
   return {
     props: {
-      // trending: trending ?? {},
+      trending: trending ?? {},
       fallback: {
         // [unstable_serialize(["api", "trending", 1])]: trending,
         "/api/trending": trending,
