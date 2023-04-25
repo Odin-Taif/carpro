@@ -7,11 +7,11 @@ import fetcher from "../../../lib/fetcher";
 import Spinner from "../../components/_child/spinner";
 import Error from "../../components/_child/error";
 
-export default function Section1({ data, isLoading, isError }) {
+export default function Section1({ data }) {
   // const { data, isLoading, isError } = fetcher("api/trending");
   console.log(data);
-  if (isLoading) return <Spinner></Spinner>;
-  if (isError) return <Error></Error>;
+  // if (isLoading) return <Spinner></Spinner>;
+  // if (isError) return <Error></Error>;
   SwiperCore.use([Autoplay]);
   const bg = {
     background: "url('/images/banner.png') no-repeat",

@@ -4,11 +4,11 @@ import Spinner from "../_child/spinner";
 import Error from "../_child/error";
 import FormSection from "./formsection3";
 
-export default function section2() {
-  const { data, isLoading, isError } = fetcher("api/services");
-  // console.log(data);
-  if (isLoading) return <Spinner></Spinner>;
-  if (isError) return <Error></Error>;
+export default function section2({ data }) {
+  // const { data, isLoading, isError } = fetcher("api/services");
+  // // console.log(data);
+  // if (isLoading) return <Spinner></Spinner>;
+  // if (isError) return <Error></Error>;
   return (
     <section className="container grid md:grid-cols-2 mx-auto py-10">
       {/* grid columns */}
