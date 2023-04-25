@@ -14,8 +14,8 @@ import axios from "axios";
 import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
-export default function Home({ fallback }) {
-  console.log(fallback);
+export default function Home({ fallback, trending }) {
+  console.log(trending);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -38,37 +38,44 @@ export default function Home({ fallback }) {
   );
 }
 
-// export async function getStaticProps() {
-//   // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
-//   const { data: products } = await getProductsData();
-//   const response = await fetch(`http://localhost:3000/api/trending`);
-//   const data = await response.json();
-//   return {
-//     props: {
-//       section1Data: data ?? {},
-//       // headerFooter: headerFooterData?.data ?? {},
-//       products: products ?? {},
-//     },
-//     /**
-//      * Revalidate means that if a new request comes to server, then every 1 sec it will check
-//      * if the data is changed, if it is changed then it will update the
-//      * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
-//      */
-//     revalidate: 1,
-//   };
-// }
-
 export async function getStaticProps() {
-  // `getStaticProps` is executed on the server side.
-  // const { data: products } = await getProductsData();
+  // const { data: headerFooterData } = await axios.get(HEADER_FOOTER_ENDPOINT);
+  const { data: products } = await getProductsData();
   const response = await fetch(`http://localhost:3000/api/trending`);
   const trending = await response.json();
   return {
     props: {
+      trending: trending ?? {},
       fallback: {
         // [unstable_serialize(["api", "trending", 1])]: trending,
-        "/api/trending": trending,
+        "/api/article": trending,
       },
+      // headerFooter: headerFooterData?.data ?? {},
+      // products: products ?? {},
     },
+    /**
+     * Revalidate means that if a new request comes to server, then every 1 sec it will check
+     * if the data is changed, if it is changed then it will update the
+     * static file inside .next folder with the new data, so that any 'SUBSEQUENT' requests should have updated data.
+     */
+    revalidate: 1,
   };
 }
+
+// export async function getStaticProps() {
+//   // `getStaticProps` is executed on the server side.
+//   // const { data: products } = await getProductsData();
+//   // const trending = await fetch("").then((res) => res.json());
+//   const res = await fetch(`http://localhost:3000/api/trending`);
+//   const data = await res.json();
+//   return {
+//     props: {
+//       trending: data ?? {},
+//       // trending: trending,
+//       // fallback: {
+//       //   // [unstable_serialize(["api", "trending", 1])]: trending,
+//       //   "/api/article": trending,
+//       // },
+//     },
+//   };
+// }
