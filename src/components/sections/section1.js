@@ -9,7 +9,7 @@ import Error from "../../components/_child/error";
 
 export default function Section1() {
   const { data, isLoading, isError } = fetcher("api/trending");
-  console.log(data);
+  // console.log(data);
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
   SwiperCore.use([Autoplay]);

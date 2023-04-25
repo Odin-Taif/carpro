@@ -15,7 +15,7 @@ import { getProductsData } from "../src/utils/products";
 import Layout from "../src/components/layout";
 
 export default function Home({ fallback }) {
-  // console.log(fallback);
+  console.log(fallback);
   const seo = {
     title: "Next JS WooCommerce REST API",
     description: "Next JS WooCommerce Theme",
@@ -60,21 +60,15 @@ export default function Home({ fallback }) {
 
 export async function getStaticProps() {
   // `getStaticProps` is executed on the server side.
-  const { data: products } = await getProductsData();
+  // const { data: products } = await getProductsData();
   const response = await fetch(`http://localhost:3000/api/trending`);
   const trending = await response.json();
   return {
     props: {
       fallback: {
-        [unstable_serialize(["api", "trending", 1])]: trending,
-        // "/api/trending": trending,
+        // [unstable_serialize(["api", "trending", 1])]: trending,
+        "/api/trending": trending,
       },
     },
   };
 }
-
-// function Article() {
-//   // `data` will always be available as it's in `fallback`.
-//   const { data } = fetcher("api/trending");
-//   return <h1>{data}</h1>;
-// }
