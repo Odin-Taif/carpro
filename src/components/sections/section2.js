@@ -7,6 +7,7 @@ import FormSection from "./formsection3";
 
 export default function section2() {
   const { data, isLoading, isError } = fetcher("api/services");
+  console.log(data);
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
   return (
